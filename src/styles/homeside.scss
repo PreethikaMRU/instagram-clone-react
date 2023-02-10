@@ -1,0 +1,82 @@
+@mixin flexrowsb{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidecontainer{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+    margin-top: 10px;
+}
+
+.loggedinuser{
+    @include flexrowsb();
+}
+
+.userdetails{
+    @include flexrowsb();
+    gap:12px;
+}
+
+.useracc{
+    display: flex;
+    flex-direction: column;
+}
+
+.suggestionsC{
+    @include flexrowsb();
+}
+
+.suggestionAcc{
+    @include flexrowsb();
+}
+
+.accountContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.useracc{
+    align-self: center;
+}
+
+.userinfo1{
+    display: flex;
+    flex-direction: column;
+}
+
+.blue{
+    color: rgb(1, 170, 227);
+}
+
+.grey{
+    color: #a1a1a1;
+}
+
+.followedBy{
+    font-size: 12px;
+}
+
+.userid{
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.switch{
+    align-self: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+@media screen and (max-width:1000px) {
+    .sidecontainer{
+        display: none;
+    }
+}
+
+.small{
+    text-align: center;
+}

@@ -1,0 +1,100 @@
+@mixin flexrowsb{
+    display: flex;
+    justify-content: space-between;
+}
+
+.username1{
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.PostItem{
+    display: flex;
+    flex-direction: column;
+    border: solid 1px;
+    padding: 20px 0;
+    border-color: white white #a6a6a6 white;
+}
+
+.PostContainer{
+    margin-bottom: 50px;
+}
+
+.postheader{
+    @include flexrowsb();
+    margin: 5px 0;
+    .userinfo{
+        @include flexrowsb();
+        gap: 5px;
+    }
+    .posttime{
+        font-size: 15px;
+        color: #aaa;
+    }
+}
+
+.postpicContainer{
+    margin: 10px 0;
+    >img{
+        border-radius: 3px;
+        object-fit: contain;
+        background-color: #fafafa
+    }
+}
+
+.picaction{
+    @include flexrowsb();
+    .lcs{
+        display: flex;
+        gap:10px;
+    }
+}
+
+.piccaption{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.piccomment{
+    margin-top: 10px;
+}
+
+.commentBox{
+    display: flex;
+    gap: 5px;
+}
+.captiondetails{
+    display: flex;
+    gap: 5px;
+}
+
+.caption{
+    font-size: 14px;
+}
+
+.comment{
+    outline: none;
+    border: none;
+    font-size: 14px;
+    width: 89%;
+    height:20px;
+}
+
+.postComment{
+    color: white;
+    background-color: rgb(86, 86, 252);
+    border-color: rgb(86, 86, 252);
+    border-radius: 2px;
+}
+
+input::placeholder{
+    color: #a1a1a1;
+}
+
+.heartbutton{
+    display: none;
+}

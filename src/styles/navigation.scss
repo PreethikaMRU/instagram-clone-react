@@ -1,0 +1,201 @@
+@mixin menu{
+    display: flex;
+    gap: 15px;
+    padding: 12px;
+    margin-right: 10px;
+    border-radius: 20px;
+}
+
+
+
+$items: home,search,explore,reels,messages,notifications,create,profile,burger;
+$texts: homeText,searchText,exploreText,reelsText,messagesText,notificationsText,createText,profileText,burgerText;
+$bottom: homeBottom, exploreBottom, reelsBottom, createBottom, messagesBottom, profileBottom;
+
+.navigation{
+    position: fixed;
+    height: 100%;
+    border-style:solid;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    border-color: #aaa;
+    border-width: 1px;
+    width: 235px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 95%;
+    padding: 25px 0 0 10px;
+}
+
+.logout{
+    position: fixed;
+    display: none;
+    background-color: white;
+    bottom: 70px;
+    left: 15px;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px -5px #aaa;
+    width: 150px;
+    z-index: 3;
+}
+
+.logout:hover{
+    background-color: #f6f6f6;
+}
+
+.logo1{
+    display: none;
+}
+
+.menuItems{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 450px;
+}
+.logoContainer{
+    margin-left: 15px;
+}
+@each $item in $items{
+    .#{$item}{
+        @include menu();
+    }
+}
+
+.create:hover,.burger:hover{
+    background-color: #f6f6f6;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.25s;
+}
+
+.burger{
+    margin-top: 110px;
+    margin-bottom: 10px;
+}
+
+
+.navBottom,.navTop{
+    display: none;
+}
+
+
+
+@media screen and (max-width:1200px){
+    @each $text in $texts{
+        .#{$text}{
+            display: none;
+        }
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .logo1{
+        display: inline;
+        margin-top:17px;
+        margin-bottom: 22px;
+    }
+
+    .navigation{
+        width: 70px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .navigation{
+        display: none;
+    }
+    .navBottom{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        height: 50px;
+        bottom: 0;
+        border-style:solid;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        border-color: #aaa;
+        border-width: 1px;
+        z-index: 2;
+        background-color: #fff;
+    }
+    @each $b in $bottom{
+        .#{$b}{
+            max-width: 25px;
+            margin: 0 auto;
+            padding: 5px 15px;
+            border-radius: 20px;
+            background-color: #fff;
+        }
+    }
+    .createBottom:hover{
+        background-color: #f6f6f6;
+        cursor: pointer;
+        transform: scale(1.05);
+        transition: transform 0.25s;
+    }
+    .navTop{
+        position: fixed;
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        height: 60px;
+        z-index: 2;
+        justify-content: space-between;
+        border-style:solid;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        border-color: #aaa;
+        border-width: 1px;
+        background-color: white;
+    }
+    .logo{
+        display: inline;
+    }
+    .logoContainerTop{
+        margin-left: 15px;
+        cursor: pointer;
+    }
+    .menuTop{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+    .notificationsTop{
+        margin-right: 15px;
+    }
+    .searchBarContainer{
+        display: flex;
+        cursor:text;
+    }
+    .searchBar{
+        width: 220px;
+        height: 35px;
+        padding-left: 5px;
+        font-size: 16px;
+        outline: none;
+        border-left: none;
+        background-color: #efefef;
+        border-radius: 0 5px 5px 0;
+        border: none;
+    }
+    .searchIconC{
+        background-color: #efefef;
+        padding:8px 5px 0 15px;
+        border-radius: 5px 0 0 5px;
+    }
+    .logout{
+        bottom: calc(100% - 6rem);
+    }
+}
